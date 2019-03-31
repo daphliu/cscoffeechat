@@ -3,16 +3,19 @@ python:
   - "3.6"
 install:
   - pip install pipenv
+  - pipenv install --dev
+script:
+  - pipenv run pycodestyle .
+before_deploy:
   - pipenv lock -r > requirements.txt
   - touch requirements.txt
   - pip install -r requirements.txt -t .
   - zip -r deploy.zip *
-script: true
 deploy:
   provider: lambda
   function_name: "cscoffeechat"
   region: "us-west-2"
-  role: "service-role/cscoffeechat"
+  role: "arn:aws:iam::655312369610:role/service-role/cscoffeechat"
   runtime: "python3.6"
   handler_name: "handler"
   zip: deploy.zip
