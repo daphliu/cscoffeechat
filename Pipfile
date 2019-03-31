@@ -9,6 +9,8 @@ google-auth-httplib2 = "*"
 google-auth-oauthlib = "*"
 
 [dev-packages]
+pycodestyle = "*"
+pydocstyle = "*"
 
 [requires]
 python_version = "3.7"
