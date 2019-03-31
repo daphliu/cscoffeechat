@@ -6,6 +6,7 @@ install:
   - pipenv install --dev
 script:
   - pipenv run pycodestyle .
+  - pipenv run pydocstyle .
 before_deploy:
   - pipenv lock -r > requirements.txt
   - touch requirements.txt
