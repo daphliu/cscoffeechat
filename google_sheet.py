@@ -1,3 +1,4 @@
+"""Interface to Google Sheets."""
 from typing import List, NamedTuple
 
 SPREADSHEET_ID = '...'
@@ -5,7 +6,8 @@ RANGE_NAME = '...'
 
 
 class FormResult(NamedTuple):
-    '''Class representing data users enter into coffee chat form '''
+    """Class representing data users enter into coffee chat form."""
+
     email: str
     name: str
     gender: str
@@ -18,6 +20,7 @@ class FormResult(NamedTuple):
 
 
 def save_form_result(form_result):
+    """Save form result to Google Sheets."""
     values = [list(form_result)]
 
     body = {
