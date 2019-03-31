@@ -12,7 +12,7 @@ deploy:
   provider: lambda
   function_name: "cscoffeechat"
   region: "us-west-2"
-  role: "cscoffeechat"
+  role: "service-role/cscoffeechat"
   runtime: "python3.6"
   handler_name: "handler"
   zip: deploy.zip
