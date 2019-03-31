@@ -15,11 +15,10 @@ class FormResult(NamedTuple):
     self_intro: str
     non_tech_topic: List[str]
     tech_topic: List[str]
-    gender_preference: str
     other_preferences: str
 
 
-def save_form_result(form_result):
+def save_form_result(form_result: FormResult):
     """Save form result to Google Sheets."""
     values = [list(form_result)]
 
